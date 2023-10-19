@@ -1,10 +1,11 @@
 import React from 'react'
+import MeditationMenu from '@/components/MeditationMenu/MeditationMenu';
+import MeditationTimer from '@/components/MeditationMenu/meditationTimer';
 
-export default function Meditation() {
+export default function meditation() {
 
-	return (
-		<div className='max-w-5xl w-full items-center text-sm'>
-			This is the Meditation Page
-		</div>);
+	return <MeditationMenu>
+		<MeditationTimer />
+	</MeditationMenu>;
 };
 
