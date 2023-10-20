@@ -4,8 +4,12 @@ import MeditationTimer from '@/components/MeditationMenu/meditationTimer';
 
 export default function meditation() {
 
-	return <MeditationMenu>
-		<MeditationTimer />
-	</MeditationMenu>;
+	return (
+		<main className='min-h-screen'>
+			<MeditationMenu>
+				<MeditationTimer time={70} />
+			</MeditationMenu>
+		</main>
+	);
 };
 

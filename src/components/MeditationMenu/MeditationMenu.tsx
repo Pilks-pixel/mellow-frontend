@@ -6,7 +6,7 @@ interface MeditationMenuProps {
 
 
 const MeditationMenu = ({ children }: MeditationMenuProps) => {
-	return <div>{children}</div>;
+	return <div className=''>{children}</div>;
 };
 
 export default MeditationMenu;
