@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { MedtationOptionsContext } from "./MeditationMenu";
 
-interface TimeProps {
-	time: number;
-}
-
-const meditationTimer = ({ time }: TimeProps) => {
-	const [timer, setTimer] = useState(time);
+const meditationTimer = () => {
+	const { meditationType, time } = useContext(MedtationOptionsContext);
 	const [timerOn, setTimerOn] = useState(false);
-	let count: NodeJS.Timeout | undefined;
+	let timeInSeconds = time * 60;
+	const [timer, setTimer] = useState(timeInSeconds);
 	let [minutes, seconds] = [Math.floor(timer / 60), Math.floor(timer % 60)];
+	let count: NodeJS.Timeout | undefined;
 
 	const timerToggleBtn = () => {
 		setTimerOn(prevState => !prevState);
 	};
+
+    // Timer Effects
+	useEffect(() => {
+		setTimer(timeInSeconds);
+	}, [time]);
 
 	useEffect(() => {
 		if (timer <= 0) {
@@ -28,7 +32,7 @@ const meditationTimer = ({ time }: TimeProps) => {
 	return (
 		<>
 			<div>
-				meditationTimer: {minutes} : {seconds >= 10? seconds: `0${seconds}`}
+				meditationTimer: {minutes} : {seconds >= 10 ? seconds : `0${seconds}`}
 			</div>
 			<button onClick={timerToggleBtn}>Start</button>
 		</>

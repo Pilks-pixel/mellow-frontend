@@ -9,7 +9,7 @@ export default function meditation() {
 		<main className='min-h-screen'>
 			<MeditationMenu>
 				<MeditationForm />
-				<MeditationTimer time={120}/>
+				<MeditationTimer />
 			</MeditationMenu>
 		</main>
 	);
