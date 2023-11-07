@@ -1,6 +1,6 @@
 import React from 'react'
 import MeditationMenu from '@/components/MeditationMenu/MeditationMenu';
-import MeditationTimer from '@/components/MeditationMenu/meditationTimer';
+import MeditationTimer from '@/components/MeditationMenu/MeditationTimer';
 import MeditationForm from '@/components/MeditationMenu/MeditationForm';
 
 export default function meditation() {
